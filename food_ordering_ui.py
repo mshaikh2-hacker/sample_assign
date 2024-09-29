@@ -8,6 +8,7 @@ def show_main_menu():
     print('N for a new order')
     print('X for close orders and print the check')
     print('Q for quit')
+    print('M for manager menu')
     user_menu_choice = input('Your choice: ')
     if user_menu_choice in 'Qq':
       break
@@ -16,6 +17,10 @@ def show_main_menu():
     elif user_menu_choice in 'Nn':
       print('New order')
       make_order(user_menu_choice.upper())  #calls a function for adding to the orders
+    elif user_menu_choice in 'Mm' :
+      functions.manager()
+    else :
+      print('Choose the option from the above again')
 
 def make_order(menu_choice):
   print('Functionality for menu choice ', menu_choice)
