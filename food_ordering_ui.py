@@ -27,6 +27,9 @@ def make_order(menu_choice):
   user_selection = functions.get_item_number()
   item_code, quantity = user_selection.split()
   print(functions.get_item_information(item_code))
+  if item_code not in data.drink_items and int(quantity)>data.menu_items[f'{item_code}'][2]:
+    print('Oops! there are only ',data.menu_items[f'{item_code}'][2],'items left in stock, Please enter the quantity as per the stock.')
+    quantity,product,price = make_order()
 
 def close_order(menu_choice):
   print('Functionality for menu choice ', menu_choice)
